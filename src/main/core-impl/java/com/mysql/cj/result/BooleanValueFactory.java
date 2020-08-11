@@ -98,9 +98,9 @@ public class BooleanValueFactory extends DefaultValueFactory<Boolean> {
         String s = StringUtils.toString(bytes, offset, length, f.getEncoding());
         byte[] newBytes = s.getBytes();
 
-        if (s.equalsIgnoreCase("Y") || s.equalsIgnoreCase("true")) {
+        if (s.equalsIgnoreCase("Y") || s.equalsIgnoreCase("YES") || s.equalsIgnoreCase("true")) {
             return createFromLong(1);
-        } else if (s.equalsIgnoreCase("N") || s.equalsIgnoreCase("false")) {
+        } else if (s.equalsIgnoreCase("N") || s.equalsIgnoreCase("NO") || s.equalsIgnoreCase("false")) {
             return createFromLong(0);
         } else if (s.contains("e") || s.contains("E") || s.matches("-?\\d*\\.\\d*")) {
             // floating point
